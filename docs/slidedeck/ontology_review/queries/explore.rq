@@ -1,0 +1,4 @@
+# New data set? List its properties.
+SELECT DISTINCT ?p
+WHERE { ?s ?p ?o }
+ORDER BY ?p

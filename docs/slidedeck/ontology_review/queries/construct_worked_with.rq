@@ -1,0 +1,7 @@
+PREFIX : <http://studio.example/>
+
+CONSTRUCT { ?actor :workedWith ?director }
+WHERE {
+  ?movie :starring   ?actor ;
+         :directedBy ?director .
+}

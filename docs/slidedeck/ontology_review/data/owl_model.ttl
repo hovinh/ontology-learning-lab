@@ -1,0 +1,23 @@
+# OWL definitions layered on top of the studio data.
+@prefix :     <http://studio.example/> .
+@prefix fan:  <http://fanwiki.example/id/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Ch 11: a class defined by a restriction (hasValue).
+:JamesDeanMovie owl:equivalentClass [
+    a owl:Restriction ;
+    owl:onProperty :starring ;
+    owl:hasValue   :JamesDean
+] .
+
+# Ch 12: every movie has at most one director.
+:Movie rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty :directedBy ;
+    owl:maxCardinality 1
+] .
+
+# Ch 15: OWL 2 property chain. workedWith = starredIn o directedBy.
+:starredIn  owl:inverseOf :starring .
+:workedWith owl:propertyChainAxiom ( :starredIn :directedBy ) .

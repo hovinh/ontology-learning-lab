@@ -1,0 +1,34 @@
+# A tiny SKOS genre vocabulary, linked to another library's vocabulary.
+@prefix :     <http://studio.example/> .
+@prefix g:    <http://studio.example/genre/> .
+@prefix lib:  <http://library.example/subjects/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+g:Genres a skos:ConceptScheme .
+
+g:Drama a skos:Concept ;
+    skos:prefLabel "Drama"@en ;
+    skos:inScheme  g:Genres ;
+    skos:exactMatch lib:DramaFilms .
+
+g:FamilyDrama a skos:Concept ;
+    skos:prefLabel "Family drama"@en ;
+    skos:broader   g:Drama .
+
+g:TeenDrama a skos:Concept ;
+    skos:prefLabel "Teen drama"@en ;
+    skos:altLabel  "Coming-of-age"@en ;
+    skos:broader   g:Drama .
+
+g:Western a skos:Concept ;
+    skos:prefLabel "Western"@en ;
+    skos:inScheme  g:Genres ;
+    skos:closeMatch lib:FrontierFilms .
+
+g:EpicWestern a skos:Concept ;
+    skos:prefLabel "Epic western"@en ;
+    skos:broader   g:Western .
+
+:RebelWithoutACause :genre g:TeenDrama .
+:EastOfEden         :genre g:FamilyDrama .
+:Giant              :genre g:FamilyDrama , g:EpicWestern .

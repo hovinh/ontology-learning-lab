@@ -1,0 +1,12 @@
+PREFIX :     <http://studio.example/>
+PREFIX g:    <http://studio.example/genre/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?title ?genreLabel
+WHERE {
+  ?movie :genre ?genre ;
+         :movieTitle ?title .
+  ?genre skos:broader* g:Drama ;
+         skos:prefLabel ?genreLabel .
+}
+ORDER BY ?title

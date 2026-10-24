@@ -1,0 +1,11 @@
+# Top-level dependencies for the ontology learning lab.
+# Edit this file, then regenerate the lock file and sync the venv with:
+#   .venv\Scripts\pip-compile --strip-extras requirements.in
+#   .venv\Scripts\pip-sync requirements.txt
+
+# Slide deck generation
+python-pptx
+
+# RDF / SPARQL / RDFS + OWL RL inference for the runnable examples
+rdflib
+owlrl

@@ -1,0 +1,13 @@
+# RDFS schema for the studio vocabulary. Every line is just another triple.
+@prefix :     <http://studio.example/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:Actor    rdfs:subClassOf :Person .
+:Director rdfs:subClassOf :Person .
+
+:movieTitle rdfs:subPropertyOf rdfs:label .
+:personName rdfs:subPropertyOf rdfs:label .
+
+:starring   rdfs:range  :Actor .
+:directedBy rdfs:domain :Movie ;
+            rdfs:range  :Director .

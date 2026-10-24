@@ -1,0 +1,10 @@
+PREFIX :    <http://studio.example/>
+PREFIX fan: <http://fanwiki.example/id/>
+
+# Studio data + fan-wiki data in one question.
+SELECT DISTINCT ?title ?birthplace
+WHERE {
+  :Giant :starring ?star ;
+         :movieTitle ?title .
+  ?star fan:bornIn ?birthplace .
+}

@@ -1,0 +1,5 @@
+# Source C: a theatre archive that happens to reuse the studio's property.
+@prefix :  <http://studio.example/> .
+@prefix th: <http://theatre.example/> .
+
+th:StreetcarNamedDesire1947 :directedBy :EliaKazan .

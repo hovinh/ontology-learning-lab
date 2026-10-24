@@ -1,0 +1,11 @@
+PREFIX : <http://studio.example/>
+
+SELECT ?title ?year ?directorName
+WHERE {
+  ?movie :starring    :JamesDean ;
+         :movieTitle  ?title ;
+         :releaseYear ?year ;
+         :directedBy  ?director .
+  ?director :personName ?directorName .
+}
+ORDER BY ?year ?title

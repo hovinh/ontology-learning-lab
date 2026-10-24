@@ -1,0 +1,29 @@
+# Source A: a studio catalogue. It names things in its own namespace.
+@prefix :     <http://studio.example/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+:RebelWithoutACause a :Movie ;
+    :movieTitle  "Rebel Without a Cause" ;
+    :releaseYear 1955 ;
+    :directedBy  :NicholasRay ;
+    :starring    :JamesDean , :NatalieWood .
+
+:EastOfEden a :Movie ;
+    :movieTitle  "East of Eden" ;
+    :releaseYear 1955 ;
+    :directedBy  :EliaKazan ;
+    :starring    :JamesDean .
+
+:Giant a :Movie ;
+    :movieTitle  "Giant" ;
+    :releaseYear 1956 ;
+    :directedBy  :GeorgeStevens ;
+    :starring    :JamesDean , :ElizabethTaylor , :RockHudson .
+
+:JamesDean       :personName "James Dean" ;       :registryId "P-0015" .
+:NatalieWood     :personName "Natalie Wood" .
+:ElizabethTaylor :personName "Elizabeth Taylor" .
+:RockHudson      :personName "Rock Hudson" .
+:NicholasRay     :personName "Nicholas Ray" .
+:EliaKazan       :personName "Elia Kazan" .
+:GeorgeStevens   :personName "George Stevens" .

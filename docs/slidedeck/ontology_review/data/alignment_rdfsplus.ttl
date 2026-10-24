@@ -1,0 +1,11 @@
+# RDFS-Plus alignment between the studio and the fan wiki.
+@prefix :    <http://studio.example/> .
+@prefix fan: <http://fanwiki.example/id/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+fan:Star       owl:equivalentClass    :Actor .
+fan:name       owl:equivalentProperty :personName .
+fan:registryId owl:equivalentProperty :registryId .
+
+# One registry id identifies at most one person.
+:registryId a owl:InverseFunctionalProperty .

@@ -1,0 +1,10 @@
+# Source B: a fan wiki. Same world, different names (nonunique naming).
+@prefix fan: <http://fanwiki.example/id/> .
+
+fan:Dean_James a fan:Star ;
+    fan:name       "James Dean" ;
+    fan:registryId "P-0015" ;
+    fan:bornIn     "Marion, Indiana" .
+
+fan:G_Stevens a fan:Filmmaker ;
+    fan:name "George Stevens" .

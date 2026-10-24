@@ -1,0 +1,5 @@
+# The fan wiki also records who directed Giant, under its own name.
+@prefix :   <http://studio.example/> .
+@prefix fan: <http://fanwiki.example/id/> .
+
+:Giant :directedBy fan:G_Stevens .

@@ -1,0 +1,19 @@
+PREFIX :     <http://studio.example/>
+PREFIX fan:  <http://fanwiki.example/id/>
+PREFIX g:    <http://studio.example/genre/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+# Where were the stars of drama films born, and which directors did they work with?
+# Each line ends with the layer that lets it match.
+SELECT DISTINCT ?star ?birthplace ?director
+WHERE {
+  ?movie :genre/skos:broader* g:Drama .  # SKOS
+  ?movie :starring ?actor .              # RDF
+  ?actor a :Person .                     # RDFS
+  ?actor rdfs:label ?star .              # RDFS
+  ?actor fan:bornIn ?birthplace .        # RDFS-Plus
+  ?actor :workedWith ?d .                # OWL
+  ?d rdfs:label ?director .              # RDFS
+}
+ORDER BY ?director
